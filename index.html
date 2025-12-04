@@ -15,24 +15,25 @@
     <link rel="stylesheet" href="styles.css">
     <!-- ADD LINK TO YOUR CSS-->
 </head>
-
-<body id="container">
     <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
     <!--Viewports:
-            Global style, mobile first (min-width: 480px) = 1 col, 6 rows
+            Global style, mobile first (min-width: 400px) = 1 col, 6 rows
             Medium (min-width: 800px) = 2 col, 3 rows
             Large (min-width: 1024px) - 3 col, 2 rows-->
 
     <!--Header section: Mobile Menu (drop down, hamburger icon, pseudo hover style list anchors)-->
+<body id="mobile-first">
     <header>
         <!--Logo and Brand-->
-        <h1>Vaanguard</h1>
-        <!--Navbar: Responsive mobile menu-->
         <nav>
-            <h2>Main Navigation</h2>
+            <h1>Vanguard</h1>
+             <!--Navbar: Responsive mobile menu with checkbox input and label with empty spans-->
+             <h2>Main Navigation</h2>
+             <input type="checkbox" id="menu-toggle">
+             <label for="menu-toggle"><span></span></label>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Service</a>s</li>
+                <li><a href="#services">Service</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -46,7 +47,7 @@
     </section>
 
     <!--Intro/About section: h2, p-->
-    <section id="about">
+    <section id="about" class="container">
         <h2>Our Expertise. Your Edge.</h2>
         <p>We redefine success by leveraging AI-driven analytics, market intelligence, and high-yield investment
             strategies to propel businesses forward. Whether you're looking to scale, optimize, or dominate, our
@@ -55,45 +56,50 @@
 
     <!--Services Section: h2, h3, p | Flexible Grid Layout - h3, p text in blue boxes-->
     <section id="services">
-        <h2>What We Offer</h2>
+            <h2>What We Offer</h2>
+        <div class="container">
+            <h3>Strategic Growth Consulting</h3>
+            <p>Unlock new revenue streams and optimize market expansion strategies.</p>
+        </div>
 
-        <h3>Strategic Growth Consulting</h3>
-        <p>Unlock new revenue streams and optimize market expansion strategies.</p>
+        <div class="container">
+            <h3>High-Impact Investment Solutions</h3>
+            <p>Maximize returns with data-driven portfolio management.</p>
+        </div>
 
-        <h3>High-Impact Investment Solutions</h3>
-        <p>Maximize returns with data-driven portfolio management.</p>
+        <div class="container">
+            <h3>Business Acceleration & Mergers</h3>
+            <p>Identify opportunities for rapid growth and high-value acquisitions.</p>
+        </div>
 
-        <h3>Business Acceleration & Mergers</h3>
-        <p>Identify opportunities for rapid growth and high-value acquisitions.</p>
+        <div class="container">
+            <h3>Digital Transformation</h3>
+            <p>Stay at the forefront of industry advancements with AI, blockchain, and automation.</p>
+        </div>
 
-        <h3>Digital Transformation</h3>
-        <p>Stay at the forefront of industry advancements with AI, blockchain, and automation.</p>
+        <div class="container">
+            <h3>Exclusive Executive Advisory Services</h3>
+            <p>Personalized insights and leadership support for C-suite executives and high-net-worth investors.</p>
+        </div>
 
-        <h3>Exclusive Executive Advisory Services</h3>
-        <p>Personalized insights and leadership support for C-suite executives and high-net-worth investors.</p>
-
-        <h3>Corporate Innovation</h3>
-        <p>Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance
-            competitive advantage, and adapt to evolving market demands.</p>
+        <div class="container">
+            <h3>Corporate Innovation</h3>
+            <p>Strategic implementation of new ideas, technologies, and processes to drive business growth, enhance
+                competitive advantage, and adapt to evolving market demands.</p>
+        </div>
     </section>
 
     <section id="results">
         <h2>Proven Results</h2>
-        Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.
+        <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
 
         <h3>Profits</h3>
-        <!--3 x 6 cell table = 3 col (th), 5 rows (tr) | Black & Grey (td)
-            (th)   Year(td)     Revenue(td)    Growth(td)
-                (tr) 2020(td)    $120M(td)     30%(td)
-                (tr) 2021(td)    $180M(td)     50%(td)
-                (tr) 2022(td)    $250M(td)     70%(td)
-                (tr) 2023(td)    $340M(td)     85%(td)
-                (tr) 2024(td)    $420M(td)     100%(td)-->
+        <!--3 x 6 cell table = 3 col (th), 5 rows (tr) | Black & Grey-->
         <table>
             <tr>
-                <th>Year</th>
-                <th>Revenue ($M)</th>
-                <th>Growth (%)</th>
+                <th scope="col">Year</th>
+                <th scope="col">Revenue ($M)</th>
+                <th scope="col">Growth (%)</th>
             </tr>
 
             <tr>
@@ -146,11 +152,11 @@
             Industry (characters and numbers)
             How can we help you? (text area box, larger than other labels)
             Submit Button (blue, border-radius, white font)-->
-    <section id="contact">
+    <section id="contact" class="container">
         <h2>Contact Us</h2>
         <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
 
-        <form id="table" action="" target="_blank" method="POST"> 
+        <form id="table" action="index.html" target="_blank" method="POST" enctype="multipart/form-data">
             <p>
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="fullname">
@@ -189,4 +195,5 @@
         <p>Phone:</p><a href="tel:480.123.4567">480.123.4567</a>
     </footer>
 </body>
+
 </html>

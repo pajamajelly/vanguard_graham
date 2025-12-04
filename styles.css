@@ -1,7 +1,8 @@
-/* CSS BY YOUR NAME */
+/* CSS BY PJ graham */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,8 +64,17 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+#mobile-first {
+    min-width: 400px;
+    margin: 0 auto;
+    font-family: var(--font);
+}
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -73,10 +83,126 @@ table {
     margin: 0 auto;
 }
 
+/* Header: Navbar, ul, li - Mobile Menu */
+
+h1 {
+    color: var(--blue);
+    font-size: 35px;
+    font-weight:700;
+
+}
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+h1:before {
+    content: "";
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+}
+
+nav {
+    background-color: var(--black);
+    position: relative;
+    height: 13vh;
+    border-bottom: 5px solid var(--blue);
+}
+
+/* Hides the ul inside of the hamburger menu */
+nav ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    width: 100%;
+    background: var(--black);
+}
+
+nav a {
+    display: flex;
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow:hidden;
+    text-align:center;
+}
+
+nav h2 {
+  visibility:hidden;
+  height:1px;
+}
+
+nav li a {
+    display:block;
+    font-family:var(--font);
+    font-size: 1.15em;
+    padding: 0.5em;
+    text-transform:uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--white);
+    transition: var(--black) .3s ease-in;
+  }
+
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+}
+
+nav label {
+    cursor: crosshair;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+/* Collaspe hamburger to make a single line */
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+
+/* Puts the two lines on top and bottom*/
+label span:before, label span:after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+  display:none;
+}
+
+/* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
+nav input:checked ~ ul {
+    max-height: 600px;
+}
+/* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
+input:checked ~ label span {
+    background: transparent;
+}
+/* LOCATION OF THE HAMBURGER */
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+#hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
+    height: 75vh;
     display: grid;
     place-items: center;
     text-align: center;
@@ -84,16 +210,129 @@ table {
     overflow: hidden;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+#hero h2 {
+    color: var(--white);
+    font-size: 1.75em;
+    font-weight: bold;
+    position: relative;
+    top: 100px;
 }
+
+#hero p {
+    color: var(--white);
+    font-size: 1em;
+    line-height: 1.5em;
+    position: absolute;
+    text-align: center;
+    width: 80vw;
+}
+
+#hero a {
+    width: 250px;
+    height: 60px;
+    position: relative;
+    top: -100px;
+    background-color: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#hero a:hover {
+    transform: scale(110%);
+    transition: 0.35s;
+    background-color: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* About Section with H2 and p */
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0 20px;
+    padding-left: 40px;
+}
+
+p {
+    line-height: 1.4em;
+    font-size: 18px;
+}
+
+/* Services Section: H3, p = flexable grid layout */
+
+#services {
+    grid-area: services;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+#services > div {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+}
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0 20px 10px;
+}
+
+#services > p {
+    font-size: 2.25em;
+}
+
+/* Results section: Table, th/tr/td 3x6 table grid with black and charcoal background cells */
+#results {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 100px;
+    height: 100vh;
+}
+
+#results > p {
+    padding-left: 30px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#results > h3 {
+    padding-left: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--charcoal);
+}
+
+td, th {
+    border: 1px solid var(--black);
+    text-align: center;
+    padding: 20px;
+}
+
+th {
+    background-color: var(--black);
+}
+
+tr:nth-child(even) {
+    background-color: var(--black);
+}
+
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -113,7 +352,7 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: 2s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -140,9 +379,27 @@ table {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+/* Contact Section: Form, required, action POST, blue border labels, white text and black background */
+
+
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 800px) {
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        left:.5rem;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+      }
+      nav li a {
+        display:inline-block;
+    }
+      label span, input {
+        display:none;
+      }
+    
     #results {
         grid-template-columns: 1fr 1fr;
     }
@@ -156,6 +413,36 @@ table {
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1072px) {
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        left:.5rem;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+      }
+      nav li a {
+        display:inline-block;
+    }
+      label span, input {
+        display:none;
+      }
+    
+    #results {
+        grid-template-columns: 1fr 1fr;
+    }
+    .results-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .results-table {
+        width: 50%;
+    }
+    .bar-chart {
+        width: 50%;
+    }
+}
