@@ -15,19 +15,20 @@
     <link rel="stylesheet" href="styles.css">
     <!-- ADD LINK TO YOUR CSS-->
 </head>
- <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
+<!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
 
 <!--mobile first (min-width: 400px) = 1 col, 6 rows-->
+
 <body id="mobile-first">
     <!--Header section: Mobile Menu (hamburger drop down, hero image with h2, p and a pseudo hover style button)-->
     <header id="navbar">
+        <!--Logo and Brand Name-->
+        <h1 class="logo">Vanguard</h1>
+        <!--Navbar: Responsive mobile menu with hidden h2 and checkbox input and label with empty spans-->
         <nav>
-             <!--Logo and Brand Name-->
-            <h1 class="logo">Vanguard</h1>
-             <!--Navbar: Responsive mobile menu with hidden h2 and checkbox input and label with empty spans-->
-             <h2>Main Navigation</h2>
-             <input type="checkbox" id="menu-toggle">
-             <label for="menu-toggle"><span></span></label>
+            <h2>Main Navigation</h2>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle"><span></span></label>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Service</a></li>
@@ -40,7 +41,7 @@
         <h2>Innovation & Investment</h2>
         <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial
             solutions that drive success.</p>
-        <a href="services" target="_blank">Request a Consultation</a>
+        <a href="#contact" target="_blank">Request a Consultation</a>
     </section>
 
     <!--Intro/About section: h2, p-->
@@ -52,8 +53,8 @@
     </section>
 
     <!--Services Section: h2, h3, p | Flexible Grid Layout - h3, p text in blue boxes-->
+    <h2>What We Offer</h2>
     <section id="services">
-            <h2>What We Offer</h2>
         <div class="container">
             <h3>Strategic Growth Consulting</h3>
             <p>Unlock new revenue streams and optimize market expansion strategies.</p>
@@ -87,67 +88,69 @@
     </section>
 
     <section id="results">
-        <h2>Proven Results</h2>
-        <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
+        <div class="container">
+            <h2>Proven Results</h2>
+            <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
 
-        <h3>Profits</h3>
-        <!--3 x 6 cell table = 3 col (th), 5 rows (tr) | Black & Grey-->
-        <table>
-            <tr>
-                <th scope="col">Year</th>
-                <th scope="col">Revenue ($M)</th>
-                <th scope="col">Growth (%)</th>
-            </tr>
+            <!--3 x 6 cell table = 3 col (th), 5 rows (tr) | Black & Grey-->
+            <h3>Profits</h3>
+            <table class="results-table">
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Revenue ($M)</th>
+                    <th scope="col">Growth (%)</th>
+                </tr>
 
-            <tr>
-                <td>2020</td>
-                <td>$120M</td>
-                <td>30%</td>
-            </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>$120M</td>
+                    <td>30%</td>
+                </tr>
 
-            <tr>
-                <td>2021</td>
-                <td>$180M</td>
-                <td>50%</td>
-            </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>$180M</td>
+                    <td>50%</td>
+                </tr>
 
-            <tr>
-                <td>2022</td>
-                <td>$250M</td>
-                <td>70%</td>
-            </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>$250M</td>
+                    <td>70%</td>
+                </tr>
 
-            <tr>
-                <td>2023</td>
-                <td>$340M</td>
-                <td>85%</td>
-            </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>$340M</td>
+                    <td>85%</td>
+                </tr>
 
-            <tr>
-                <td>2024</td>
-                <td>$420M</td>
-                <td>100%</td>
-            </tr>
-        </table>
-
-        <h3>Growth</h3>
-        <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
-        <div id="bar-chart">
-            <div class="bar" data-year="2020" style="--height: 30%;"></div>
-            <div class="bar" data-year="2021" style="--height: 50%;"></div>
-            <div class="bar" data-year="2022" style="--height: 70%;"></div>
-            <div class="bar" data-year="2023" style="--height: 85%;"></div>
-            <div class="bar" data-year="2024" style="--height: 100%;"></div>
+                <tr>
+                    <td>2024</td>
+                    <td>$420M</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+            <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
+            <h3>Growth</h3>
+            <div id="bar-chart">
+                <div class="bar" data-year="2020" style="--height: 30%;"></div>
+                <div class="bar" data-year="2021" style="--height: 50%;"></div>
+                <div class="bar" data-year="2022" style="--height: 70%;"></div>
+                <div class="bar" data-year="2023" style="--height: 85%;"></div>
+                <div class="bar" data-year="2024" style="--height: 100%;"></div>
+            </div>
         </div>
     </section>
 
     <!--Contact section: Responsive and styled form-->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p class="contact-info">Want to take your business to the next level? Get in touch with our elite team today.</p>
+        <p class="contact-info">Want to take your business to the next level? Get in touch with our elite team today.
+        </p>
         <form id="table" action="contact-form-handler.php" target="_blank" method="POST">
 
-         <!--Inputs/Labels - no placeholders-->
+            <!--Inputs/Labels - no placeholders-->
             <p>
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="fullName">
@@ -169,22 +172,24 @@
 
             <p>
                 <label for="summary">How can we help you?</label>
-                <textarea type="text" name="summary" id="summary" rows="6" cols="50"></textarea>
+                <textarea name="summary" id="summary" rows="6" cols="50"></textarea>
             </p>
             <p>
                 <input type="submit" value="Submit">
             </p>
         </form>
 
-    <!--Footer with anchor tag for email (mailto:) and phone-->
-    <footer>
-        <div>
-            <p>&copy; 2025 Vanguard. For educational purposes only.</p>
-            <p>Email:</p><a href="mailto:info@vaanguard.com">info@vaanguard.com</a>
-            <p>Phone:</p><a href="tel:480.123.4567">480.123.4567</a>
-        </div>
-    </footer>
-</section>
+        <!--Footer with anchor tag for email (mailto:) and phone-->
+        <footer>
+            <div>
+                <p>&copy; 2025 Vanguard. For educational purposes only.</p>
+
+                <p>Email: <a href="mailto:info@vaanguard.com">info@vaanguard.com</a></p>
+
+                <p>Phone: 480.123.4567</p>
+            </div>
+        </footer>
+    </section>
 </body>
 
 </html>
