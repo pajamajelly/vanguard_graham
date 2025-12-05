@@ -547,10 +547,10 @@ footer p {
         columns: 2;
     }
     .results-table {
-        width: 50vw;      
+        width: 40vw;      
     }
     .bar-chart {
-        width: 50vw;
+        width: 40vw;
     }
 
 /* Contact form section */
@@ -637,4 +637,5 @@ input[type=submit]:hover {
     font-family: var(--font);
     padding: 15px;
     border-radius: 10px;
+}
 }
