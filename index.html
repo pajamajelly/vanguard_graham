@@ -15,19 +15,16 @@
     <link rel="stylesheet" href="styles.css">
     <!-- ADD LINK TO YOUR CSS-->
 </head>
-    <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
-    <!--Viewports:
-            Global style, mobile first (min-width: 400px) = 1 col, 6 rows
-            Medium (min-width: 800px) = 2 col, 3 rows
-            Large (min-width: 1024px) - 3 col, 2 rows-->
+ <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
 
-    <!--Header section: Mobile Menu (drop down, hamburger icon, pseudo hover style list anchors)-->
+<!--mobile first (min-width: 400px) = 1 col, 6 rows-->
 <body id="mobile-first">
-    <header>
-        <!--Logo and Brand-->
+    <!--Header section: Mobile Menu (hamburger drop down, hero image with h2, p and a pseudo hover style button)-->
+    <header id="navbar">
         <nav>
-            <h1>Vanguard</h1>
-             <!--Navbar: Responsive mobile menu with checkbox input and label with empty spans-->
+             <!--Logo and Brand Name-->
+            <h1 class="logo">Vanguard</h1>
+             <!--Navbar: Responsive mobile menu with hidden h2 and checkbox input and label with empty spans-->
              <h2>Main Navigation</h2>
              <input type="checkbox" id="menu-toggle">
              <label for="menu-toggle"><span></span></label>
@@ -145,55 +142,49 @@
     </section>
 
     <!--Contact section: Responsive and styled form-->
-    <!--Inputs/Labels - no placeholders
-            Full Name (required, characters only)
-            Email Address (required, email address only)
-            Company Name (characters and numbers)
-            Industry (characters and numbers)
-            How can we help you? (text area box, larger than other labels)
-            Submit Button (blue, border-radius, white font)-->
-    <section id="contact" class="container">
+    <section id="contact">
         <h2>Contact Us</h2>
-        <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
+        <p class="contact-info">Want to take your business to the next level? Get in touch with our elite team today.</p>
+        <form id="table" action="contact-form-handler.php" target="_blank" method="POST">
 
-        <form id="table" action="index.html" target="_blank" method="POST" enctype="multipart/form-data">
+         <!--Inputs/Labels - no placeholders-->
             <p>
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="fullname">
+                <input type="text" id="name" name="fullName">
             </p>
 
             <p>
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email">
             </p>
-
             <p>
                 <label for="company">Company Name</label>
-                <input type="text" id="company" name="companyname">
+                <input type="text" id="company" name="companyName">
             </p>
 
             <p>
                 <label for="industry"> Industry</label>
-                <input type="text" id="industry" name="industryname">
+                <input type="text" id="industry" name="industryName">
             </p>
 
             <p>
                 <label for="summary">How can we help you?</label>
-                <textarea name="summary" id="summary" rows="4" cols="50"></textarea>
+                <textarea type="text" name="summary" id="summary" rows="6" cols="50"></textarea>
             </p>
-
             <p>
                 <input type="submit" value="Submit">
             </p>
         </form>
-    </section>
 
     <!--Footer with anchor tag for email (mailto:) and phone-->
     <footer>
-        <p>&copy; 2025 Vanguard. For educational purposes only.</p>
-        <p>Email:</p><a href="mailto:info@vaanguard.com">info@vaanguard.com</a>
-        <p>Phone:</p><a href="tel:480.123.4567">480.123.4567</a>
+        <div>
+            <p>&copy; 2025 Vanguard. For educational purposes only.</p>
+            <p>Email:</p><a href="mailto:info@vaanguard.com">info@vaanguard.com</a>
+            <p>Phone:</p><a href="tel:480.123.4567">480.123.4567</a>
+        </div>
     </footer>
+</section>
 </body>
 
 </html>

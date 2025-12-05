@@ -85,12 +85,16 @@ table {
 
 /* Header: Navbar, ul, li - Mobile Menu */
 
-h1 {
-    color: var(--blue);
-    font-size: 35px;
-    font-weight:700;
-
+#navbar {
+    display: flex; 
+    justify-content: space-between;
+    border-bottom: 5px solid var(--blue);
+    background-color: var(--black);
+    width: 100vw;
+    height: 13vh;
+    gap: 10px;
 }
+
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 h1:before {
     content: "";
@@ -98,26 +102,30 @@ h1:before {
     width: 2em;
     height: 2em;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    margin-top: 15px;
 }
 
-nav {
-    background-color: var(--black);
-    position: relative;
-    height: 13vh;
-    border-bottom: 5px solid var(--blue);
+h1 {
+    color: var(--blue);
+    font-size: 30px;
+    font-weight:600;
 }
 
 /* Hides the ul inside of the hamburger menu */
 nav ul {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    list-style-type: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    width: 100%;
+    width: 100vw;
+    height: 15vh;
     background: var(--black);
 }
 
 nav a {
-    display: flex;
     margin:0;
     padding:0;
     list-style:none;
@@ -127,17 +135,17 @@ nav a {
 
 nav h2 {
   visibility:hidden;
-  height:1px;
+  height:2px;
 }
 
 nav li a {
-    display:block;
+    display: block;
     font-family:var(--font);
     font-size: 1.15em;
-    padding: 0.5em;
     text-transform:uppercase;
     font-weight: bold;
     text-decoration: none;
+    padding: 0.5em;
     color: var(--white);
     transition: var(--black) .3s ease-in;
   }
@@ -146,17 +154,15 @@ nav a:hover, nav input:hover {
     background-color: var(--blue);
 }
 
+/* Collaspe hamburger to make a single line */
 nav label {
     cursor: crosshair;
-    display: inline-block;
     padding: 1.5rem;
     user-select: none;
     position: absolute;
     top: 1em;
     right: 1em;
 }
-
-/* Collaspe hamburger to make a single line */
 label span {
     background-color: var(--white);
     display: block;
@@ -380,8 +386,82 @@ tr:nth-child(even) {
 }
 
 /* Contact Section: Form, required, action POST, blue border labels, white text and black background */
+#contact {
+    display: grid;
+    grid-template-columns: auto;
+    background: var(--black);
+    color: var(--white);
+    padding: 0 30px 0 20px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+#table {
+    font-size: 10px;
+    padding: 10px;
+    width: 200px;
+    margin: 10px;
+}
+
+label {
+    font-size: 16px;
+}
+
+input, textarea {
+    display: inline-block;
+    width: 100vw;
+    margin-bottom: 10px;
+}
+
+input[type=text], input[type=email], textarea {
+    box-sizing: border-box;
+    width: 80vw;
+    padding: 15px;
+    margin-top: 4px;
+    gap: 10px;
+    border: 3px solid var(--blue);
+    border-radius: 2px;
+}
+
+input:invalid {
+    border: 2px solid var(--red);
+}
+
+input[type=submit] {
+    width: 80vw;
+    color: var(--white);
+    background-color: var(--blue);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    transform: scale(95%);
+    transition: 0.35s;
+    background-color: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font);
+    padding: 15px;
+    border-radius: 10px;
+}
 
 
+
+
+/* Viewports:
+    Global style, mobile first (min-width: 400px) = 1 col, 6 rows
+    Medium (min-width: 800px) = 2 col, 3 rows
+    Large (min-width: 1024px) - 3 col, 2 rows */
 
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px) {
