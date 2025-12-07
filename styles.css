@@ -67,6 +67,8 @@ table {
 
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 *, *:before, *:after {
@@ -130,7 +132,6 @@ nav ul {
     overflow: hidden;
     text-align: center;
     transition: max-height 0.3s ease-out;
-    height: 15vh;
     background: var(--black);
 }
 
@@ -178,6 +179,8 @@ label span {
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
+    left: 155px;
+    top: -20px;
 }
 
 /* Puts the two lines on top and bottom*/
@@ -207,7 +210,7 @@ input:checked ~ ul {
 
 /* LOCATION OF THE HAMBURGER */
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
-    top: 0;
+    top: 2em;
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
@@ -350,6 +353,7 @@ h3 {
 
 .results-container {
     margin: 0 auto;
+    height: 85vh;
 }
 
 
